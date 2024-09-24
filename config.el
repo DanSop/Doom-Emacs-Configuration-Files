@@ -22,6 +22,7 @@
 ;; accept. For example:
 ;;
 ;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
+(setq doom-font (font-spec :size 15 ))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -65,6 +66,12 @@
   (setf magit-log-margin '(t "%d-%m-%y" magit-log-margin-width t 18))
   (set-face-attribute 'magit-branch-current nil :box '(:line-width (1 . 1) :color "#51afef")))
 
+(after! highlight-indent-guides
+  (message "Applying highlight-indent-guides settings")
+  (setq highlight-indent-guides-method 'column)
+  (setq highlight-indent-guides-auto-enabled t)
+  (setq highlight-indent-guides-responsive 'top))
+
 ;; C++ styles comments
 (add-hook 'c-mode-hook (lambda () (setq comment-start "// "
                                         comment-end   "")))
@@ -75,4 +82,3 @@
 
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
-
