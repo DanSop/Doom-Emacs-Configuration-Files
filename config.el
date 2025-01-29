@@ -22,7 +22,7 @@
 ;; accept. For example:
 ;;
 ;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-(setq doom-font (font-spec :size 15 ))
+(setq doom-font (font-spec :size 14 ))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -82,3 +82,6 @@
 
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+
+(add-to-list 'load-path "~/.config/doom/Custom/")
+(require 'ollama)
